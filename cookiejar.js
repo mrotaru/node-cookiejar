@@ -234,6 +234,17 @@
                 return matches;
             };
 
+            // returns an array of all cookies flattened
+            this.getAllCookies = function getCookies() {
+                var cookiesArray = [], cookie_name, cookie;
+                for (cookie_name in cookies) {
+                    for (var i = 0; i < cookies[cookie_name].length; i++) {
+                        cookiesArray.push(cookies[cookie_name][i]);
+                    }
+                }
+                return cookiesArray;
+            }
+
             return this;
         }
         return new CookieJar();
